@@ -19,6 +19,6 @@ const html = readFileSync(join(root, 'index.html'), 'utf8');
 const ids = new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(x => x[1]));
 for (const [, href] of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
   if (href.startsWith('#')) assert(ids.has(href.slice(1)), `Missing anchor: ${href}`);
-  else { const path = resolve(root, href); assert(path.startsWith(root + '/')); assert(existsSync(path), `Missing asset: ${href}`); }
+  else { const path = resolve(root, href.split(/[?#]/)[0]); assert(path.startsWith(root + '/')); assert(existsSync(path), `Missing asset: ${href}`); }
 }
 console.log('Public output verified: anchors, assets, document exclusion and contact privacy.');

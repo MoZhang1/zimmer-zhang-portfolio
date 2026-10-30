@@ -1,23 +1,27 @@
 # Zimmer Zhang · 张子墨
 
-A bilingual personal portfolio about product operations, music and creative practice.
+Bilingual personal portfolio: product operations across game platforms, music content systems and AI-assisted operational workflows.
 
-## Run locally
+## Run and validate
 
-`python3 -m http.server 4173 --directory dist --bind 127.0.0.1`
+Static HTML/CSS/JavaScript, with no dependencies or build step.
 
-This is a static site with no dependencies or build step. English is the default; the language switch preserves expanded projects and stores the preference on the current device. Project disclosures work with a keyboard, touch or without JavaScript.
+```sh
+python3 -m http.server 4191 --directory dist --bind 127.0.0.1
+node --check dist/app.js
+node --check dist/interactions.js
+node scripts/verify.mjs
+node --test scripts/test-interactions.cjs
+```
 
-## Content & privacy
+## Reading and interaction
 
-Work experience, education, project descriptions and written English ability are based on the owner’s existing bilingual résumé. The portrait was extracted from that same document. Music and creative practice reflect the owner’s supplied context.
+Chinese is the default, with an English switch. Selected projects can be explored through their challenge, approach and connection to the wider work. Project tabs support arrow keys and Home/End; a quick résumé offers a direct route to complete experience. Native details preserve a straightforward reading path. Optional motion can be disabled, and system reduced-motion preferences always take priority.
 
-The owner authorized a public website without contact details or résumé downloads. The published site and repository contain no email address, phone number or downloadable résumé document. No private company metrics, invented achievements or unverified project links are included.
+## Content and privacy
+
+Career details and education follow the owner’s résumé and confirmed updates. The existing portrait remains in its original colour. Project diagrams describe working methods, not business metrics. No invented quantified achievements, contact details, private résumé documents, analytics logs or user-level business data are included.
 
 ## Hosting
 
-Published with GitHub Pages. Availability does not depend on the owner’s computer being on. The deployment workflow publishes only `dist/`.
-
-## Design
-
-White, midnight ink and cobalt. Editorial type, open project rows and simple horizontal lines inspired by musical rhythm. No third-party font requests, trackers, autoplay or runtime dependencies. Reduced-motion preferences are respected.
+The existing GitHub Pages workflow validates and publishes only `dist/`. Source, verification scripts and tests are kept in this repository; local QA screenshots and logs are not published. No external fonts, tracking scripts or runtime dependencies are used.
